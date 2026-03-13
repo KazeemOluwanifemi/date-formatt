@@ -1,0 +1,23 @@
+{
+  "name": "@oluwanifemi/date-formatt",
+  "version": "0.0.1",
+  "description": "A utility package that allows you to get dates in desired formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KazeemOluwanifemi/date-formatt.git"
+  },
+  "keywords": [
+    "date",
+    "format"
+  ],
+  "author": "Kazeem Oluwanifemi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KazeemOluwanifemi/date-formatt/issues"
+  },
+  "homepage": "https://github.com/KazeemOluwanifemi/date-formatt#readme"
+}
