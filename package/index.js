@@ -7,8 +7,9 @@ function iso(input) {
     }
 }
 
-function short(date) {
+function short(input) {
     if(typeof(input) === 'string'){
+        let date = validator.validate(input)
         return date.toLocaleDateString("en", {
         day: "numeric",
         month: "short",
@@ -18,8 +19,9 @@ function short(date) {
     
 }
 
-function long(date) {
-    if(typeof(date) === 'string') {
+function long(input) {
+    if(typeof(input) === 'string') {
+        let date = validator.validate(input)
         return date.toLocaleDateString("en", {
         weekday: "long",
         month: "long",
