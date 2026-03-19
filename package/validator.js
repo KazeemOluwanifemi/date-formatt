@@ -1,19 +1,18 @@
 const fakeDateError = [null, "", 'boolean', undefined]
 
 function validate(input) {
-    fakeDateError.forEach((errorType) => {
-        if(input == errorType || typeof(input) == errorType) {
-            throw new TypeError("Input must be a null, boolean or undefined. ")
-        }
-    })
+    const inValid = fakeDateError.some(errorType => input === errorType || typeof(input) === 'boolean')
+    if(inValid) {
+        throw new TypeError("Input cannot be a null, boolean or undefined.")
+    }
+
 
     let inputArray
 
     try {
         inputArray = input.split('-')
     } catch (error) {
-        let typeOf = typeof(error)
-        throw new typeOf ("Your input should be in the format 'YYYY - MM - DD'")
+        throw new TypeError(error + ": Your input should be in the format 'YYYY - MM - DD'")
     }
 
     const year = inputArray[0]
@@ -22,11 +21,23 @@ function validate(input) {
 
     const date = new Date(input)
 
-    if(date.getFullYear() !== year || date.getMonth !== month || date.getDate !== day){
-        throw new TypeError("Your input should be in the format 'YYYY - MM - DD'")
+    if(date.getFullYear() !== Number(year) || date.getMonth() +1 !== Number(month) || date.getDate() !== Number(day)){
+        console.log(date.getFullYear())
+        console.log(date.getMonth())
+        console.log(date.getDate())
+        console.log(Number(year))
+        console.log(Number(month))
+        console.log(Number(day))
+        throw new TypeError("Your input should be in the format 'YYYY - MM - DD' and not 'YYYY-DD-MM'")
     }
 
     if(Number.isNaN(date.getTime())) {
         throw new TypeError("Input must be of a valid date type.")
     }
+
+    return date
+}
+
+module.exports = {
+    validate
 }
