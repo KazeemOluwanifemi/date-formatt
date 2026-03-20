@@ -1,6 +1,6 @@
 {
   "name": "@oluwanifemi/date-formatt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A utility package that allows you to get dates in desired formats",
   "main": "index.js",
   "scripts": {
